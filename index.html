@@ -4,13 +4,62 @@
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+        
+            <div>
+                <h1>Simple Interest Calculator</h1>
+                <table>
+                    <tr>
+                        <td>Amount</td>
+                        <td><input type="number"  id="principal"></td>
+                    </tr>
+                    <tr>
+                        <td>Interest Rate</td>
+                        <td><input type="range" min="1" max="100" value="0"  id="rate"></td>
+                        <td><p><span id="demo"></span></p></td>
+                    </tr>
+                    <tr>
+                        <td>No. of Years</td>
+                        <td><select type="number" name="" id="years">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=5>5</option>
+                            <option value=6>6</option>
+                            <option value=7>7</option>
+                            <option value=8>8</option>
+                            <option value=9>9</option>
+                            <option value=10>10</option>
+                          </select></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><button onclick="compute()">Compute Interest</button></td>
+                        
+                    </tr>
+                    
+                    
+                </table>
+                <table>
+                    <tr>
+                        <td><span id="result"></span></td>
+                        
+                    </tr>
+                </table>
+                <h4>Ⓒ Everyone Can Get Rich </h4>
+                
+                
+            </div>
+            
+            <!-- <input type="number"  id="years"> -->
+        
     </body>
+    <script>
+        var slider = document.getElementById("rate");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value ;
+        
+        slider.oninput = function() {
+          output.innerHTML = this.value + '%';
+        }
+        </script>
 </html>
